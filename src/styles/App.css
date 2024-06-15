@@ -1,0 +1,933 @@
+@media (min-width: 2560px) {
+  html {
+    font-size: 30px;
+  }
+}
+@media (min-width: 1920px) and (max-width: 2559px) {
+  html {
+    font-size: 24px;
+  }
+}
+@media (min-width: 1440px) and (max-width: 1919px) {
+  html {
+    font-size: 20px;
+  }
+}
+@media (min-width: 1280px) and (max-width: 1439px) {
+  html {
+    font-size: 16px;
+  }
+}
+@media (max-width: 1279px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  position: relative;
+  z-index: 0;
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+@media (max-width: 1000px) {
+  body {
+    overflow-y: auto;
+  }
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+div.Header {
+  display: flex;
+  align-items: center;
+  padding: 1vh 0.5vw;
+  justify-content: space-between;
+  width: 100%;
+  height: 10vh;
+  position: relative;
+  z-index: 3;
+}
+@media (max-width: 1000px) {
+  div.Header {
+    height: 9vh;
+  }
+}
+div.Header div.link {
+  padding: 0.5vh 1.5vw;
+  margin-left: 4vw;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+div.Header div.SearchInput {
+  margin-right: 7vw;
+}
+div.Header div.SearchInput div.form {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+div.Header div.SearchInput div.form div.icon {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  padding-left: 1vw;
+  z-index: 3;
+}
+div.Header div.SearchInput div.form div.icon svg {
+  color: white;
+  font-size: 1.4rem;
+}
+div.Header div.SearchInput div.form div.input {
+  position: relative;
+  display: flex;
+  z-index: 2;
+}
+div.Header div.SearchInput div.form div.input input {
+  font-size: 1.25rem;
+  font-weight: 600;
+  width: 35vw;
+  padding: 0.4vh 1vw 0.4vh 3.2vw;
+}
+@media (max-width: 1000px) {
+  div.Header div.SearchInput div.form div.input input {
+    width: 50vw;
+    padding: 0.5vh 1vw 0.5vh 5vw;
+    font-size: 1.4rem;
+  }
+}
+div.Header div.SearchInput div.form div.input div.SearchList {
+  position: absolute;
+  top: 6.5vh;
+  background-color: rgb(255, 202, 128);
+  padding: 2vh 0;
+  width: 100%;
+  border: 2px solid white;
+  border-radius: 0.3rem;
+  z-index: 2;
+}
+@media (max-width: 1000px) {
+  div.Header div.SearchInput div.form div.input div.SearchList {
+    width: 150%;
+    top: 4vh;
+    left: -11.5vh;
+  }
+}
+div.Header div.SearchInput div.form div.input div.SearchList div.searchText {
+  display: flex;
+  align-items: center;
+  height: 7vh;
+  font-size: 1.25rem;
+  padding-left: 1.5rem;
+  font-weight: 600;
+}
+@media (max-width: 1000px) {
+  div.Header div.SearchInput div.form div.input div.SearchList div.searchText {
+    font-size: 1.5rem;
+    height: 10vh;
+  }
+}
+div.Header div.SearchInput div.form div.input div.SearchList div.searchText.none {
+  color: rgb(210, 34, 64);
+}
+div.Header div.SearchInput div.form div.input div.SearchList div.searchText.error {
+  color: rgb(227, 90, 41);
+}
+div.Header div.SearchInput div.form div.input div.SearchList div.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 7vh;
+}
+@media (max-width: 1000px) {
+  div.Header div.SearchInput div.form div.input div.SearchList div.spinner {
+    font-size: 2rem;
+    height: 10vh;
+  }
+}
+div.Header div.SearchInput div.form div.input div.SearchList div.spinner div.spinner-border {
+  color: rgb(120, 120, 120);
+}
+div.Header div.SearchInput div.form div.input div.SearchList div.SearchItem {
+  padding: 1vh 0;
+  min-height: 8vh;
+  cursor: pointer;
+}
+@media (max-width: 1000px) {
+  div.Header div.SearchInput div.form div.input div.SearchList div.SearchItem {
+    padding: 2vh 0;
+  }
+}
+div.Header div.SearchInput div.form div.input div.SearchList div.SearchItem:hover {
+  background-color: rgb(255, 178, 70);
+}
+div.Header div.SearchInput div.form div.input div.SearchList div.SearchItem div.display-name {
+  padding: 0 1.5vw;
+  color: rgb(75, 75, 75);
+  font-size: 1.1rem;
+  font-weight: 550;
+}
+@media (max-width: 1000px) {
+  div.Header div.SearchInput div.form div.input div.SearchList div.SearchItem div.display-name {
+    font-size: 1.3rem;
+  }
+}
+div.Header div.SearchInput div.form div.input div.SearchList div.SearchItem div.display-name div.end {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.4vh;
+}
+@media (max-width: 1000px) {
+  div.Header div.SearchInput div.form div.input div.SearchList div.SearchItem div.display-name div.end {
+    padding-top: 1vh;
+  }
+}
+div.Header div.SearchInput div.form div.input div.SearchList div.SearchItem div.display-name div.end div.country {
+  color: rgb(0, 123, 255);
+}
+div.Header div.SearchInput div.form div.input div.SearchList div.SearchItem div.display-name div.end div.type {
+  color: rgb(238, 127, 0);
+}
+
+div.ResultPage {
+  position: relative;
+  height: 100%;
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: overlay;
+}
+div.ResultPage div.cover {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(to bottom, rgb(36, 36, 36), rgba(36, 36, 36, 0));
+}
+@media (max-width: 1000px) {
+  div.ResultPage div.cover {
+    background-image: linear-gradient(to bottom, rgb(36, 36, 36), rgb(36, 36, 36));
+  }
+}
+div.ResultPage div.weather-content {
+  position: relative;
+  z-index: 1;
+  padding: 0 3vw 4vh 3vw;
+  margin: 0;
+  height: 90vh;
+  display: grid;
+  grid-template-rows: 1fr 2fr;
+  grid-template-columns: 1fr 2fr;
+  gap: 2vh 2vw;
+}
+@media (max-width: 1000px) {
+  div.ResultPage div.weather-content {
+    display: flex;
+    flex-direction: column;
+    min-height: 90vh;
+  }
+}
+div.ResultPage div.weather-content div.Panel {
+  border: 1px solid rgb(60, 60, 60);
+  border-radius: 0.6rem;
+  padding: 1vh 1vw;
+  box-shadow: 2px 3px rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.6);
+}
+div.ResultPage div.weather-content div.Panel.weather {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 1000px) {
+  div.ResultPage div.weather-content div.Panel.weather {
+    padding: 2vh 0;
+  }
+}
+div.ResultPage div.weather-content div.Panel.weather div.icon svg {
+  font-size: 7rem;
+  margin-right: 2vw;
+}
+@media (max-width: 1000px) {
+  div.ResultPage div.weather-content div.Panel.weather div.icon svg {
+    margin-right: 10vw;
+  }
+}
+div.ResultPage div.weather-content div.Panel.weather div.icon.storm {
+  color: rgb(252, 0, 88);
+}
+div.ResultPage div.weather-content div.Panel.weather div.icon.drizzle {
+  color: rgb(15, 131, 255);
+}
+div.ResultPage div.weather-content div.Panel.weather div.icon.rain {
+  color: rgb(15, 79, 255);
+}
+div.ResultPage div.weather-content div.Panel.weather div.icon.snow {
+  color: rgb(180, 255, 240);
+}
+div.ResultPage div.weather-content div.Panel.weather div.icon.atmosphere {
+  color: gray;
+}
+div.ResultPage div.weather-content div.Panel.weather div.icon.clear {
+  color: rgb(255, 177, 33);
+}
+div.ResultPage div.weather-content div.Panel.weather div.icon.clouds {
+  color: rgb(200, 200, 200);
+}
+div.ResultPage div.weather-content div.Panel.weather div.text div.main {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1vh;
+}
+@media (max-width: 1000px) {
+  div.ResultPage div.weather-content div.Panel.weather div.text div.main {
+    font-size: 2.2rem;
+  }
+}
+div.ResultPage div.weather-content div.Panel.weather div.text div.desc {
+  font-size: 1.4rem;
+}
+@media (max-width: 1000px) {
+  div.ResultPage div.weather-content div.Panel.weather div.text div.desc {
+    font-size: 1.8rem;
+  }
+}
+div.ResultPage div.weather-content div.Panel.location {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2vh 2vw;
+}
+@media (max-width: 1000px) {
+  div.ResultPage div.weather-content div.Panel.location {
+    padding: 2vh 4vw;
+  }
+}
+div.ResultPage div.weather-content div.Panel.location div.top div.name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  max-height: 9vh;
+  overflow-y: auto;
+}
+@media (max-width: 1000px) {
+  div.ResultPage div.weather-content div.Panel.location div.top div.name {
+    font-size: 1.4rem;
+  }
+}
+div.ResultPage div.weather-content div.Panel.location div.top div.info-1 {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  justify-content: space-around;
+  padding: 2.5vh 0;
+  font-size: 1rem;
+}
+@media (max-width: 1000px) {
+  div.ResultPage div.weather-content div.Panel.location div.top div.info-1 {
+    width: 80%;
+    font-size: 1.2rem;
+  }
+}
+div.ResultPage div.weather-content div.Panel.location div.top div.info-1 div.type {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: rgb(253, 154, 41);
+}
+@media (max-width: 1000px) {
+  div.ResultPage div.weather-content div.Panel.location div.top div.info-1 div.type {
+    font-size: 1.6rem;
+  }
+}
+div.ResultPage div.weather-content div.Panel.location div.info-2 {
+  display: flex;
+  align-items: center;
+}
+div.ResultPage div.weather-content div.Panel.location div.info-2 label {
+  color: rgb(170, 170, 170);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-right: 0.6vw;
+}
+@media (max-width: 1000px) {
+  div.ResultPage div.weather-content div.Panel.location div.info-2 label {
+    margin-right: 1vw;
+    font-size: 1.4rem;
+  }
+}
+div.ResultPage div.weather-content div.Panel.location div.info-2 div {
+  margin-left: 1vw;
+  padding-left: 1.6vw;
+  border-left: 0.4vw solid white;
+  font-size: 1rem;
+}
+@media (max-width: 1000px) {
+  div.ResultPage div.weather-content div.Panel.location div.info-2 div {
+    margin-left: 1.5vw;
+    padding-left: 3vw;
+    border-left: 0.8vw solid white;
+    font-size: 1.2rem;
+  }
+}
+div.ResultPage div.weather-content div.Panel.side div.top {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+div.ResultPage div.weather-content div.Panel.side div.top div.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 10vw;
+  height: 32vh;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: rgb(165, 147, 255);
+}
+@media (max-width: 1000px) {
+  div.ResultPage div.weather-content div.Panel.side div.top div.item {
+    width: 30vw;
+    height: 22vh;
+    font-size: 1.7rem;
+  }
+}
+div.ResultPage div.weather-content div.Panel.side div.top div.item svg {
+  font-size: 2.2rem;
+  margin-bottom: 3vh;
+}
+@media (max-width: 1000px) {
+  div.ResultPage div.weather-content div.Panel.side div.top div.item svg {
+    font-size: 3rem;
+    margin-bottom: 2vh;
+  }
+}
+div.ResultPage div.weather-content div.Panel.side div.top div.item label {
+  margin-bottom: 6vh;
+}
+@media (max-width: 1000px) {
+  div.ResultPage div.weather-content div.Panel.side div.top div.item label {
+    margin-bottom: 3vh;
+  }
+}
+div.ResultPage div.weather-content div.Panel.side div.top div.item div.number {
+  display: flex;
+  color: rgb(178, 188, 255);
+  height: 5vh;
+  font-size: 1.3rem;
+  align-items: center;
+  text-align: center;
+}
+@media (max-width: 1000px) {
+  div.ResultPage div.weather-content div.Panel.side div.top div.item div.number {
+    font-size: 1.8rem;
+  }
+}
+div.ResultPage div.weather-content div.Panel.side div.top div.item.wind div.number {
+  font-size: 1.4rem;
+}
+@media (max-width: 1000px) {
+  div.ResultPage div.weather-content div.Panel.side div.top div.item.wind div.number {
+    font-size: 1.9rem;
+  }
+}
+div.ResultPage div.weather-content div.Panel.side div.top div.item.wind div.warning {
+  color: rgb(255, 171, 74);
+}
+div.ResultPage div.weather-content div.Panel.side div.top div.item.wind div.danger {
+  color: rgb(255, 94, 118);
+}
+div.ResultPage div.weather-content div.Panel.side div.bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 16vh;
+  flex-direction: column;
+  margin-top: 4vh;
+}
+@media (max-width: 1000px) {
+  div.ResultPage div.weather-content div.Panel.side div.bottom {
+    max-height: 16vh;
+    margin-top: 2vh;
+  }
+}
+div.ResultPage div.weather-content div.Panel.side div.bottom div label {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+@media (max-width: 1000px) {
+  div.ResultPage div.weather-content div.Panel.side div.bottom div label {
+    font-size: 1.7rem;
+  }
+}
+div.ResultPage div.weather-content div.Panel.side div.bottom div div.container {
+  position: relative;
+  margin-top: 1.5vh;
+  width: 20vw;
+  height: 4vh;
+  border-radius: 2vh;
+  background-color: rgb(90, 90, 90);
+}
+@media (max-width: 1000px) {
+  div.ResultPage div.weather-content div.Panel.side div.bottom div div.container {
+    width: 75vw;
+  }
+}
+div.ResultPage div.weather-content div.Panel.side div.bottom div div.container div.inner {
+  position: absolute;
+  inset: 0;
+  height: 4vh;
+  border-radius: 2vh;
+}
+div.ResultPage div.weather-content div.Panel.side div.bottom div div.text {
+  display: flex;
+  margin-top: 1.5vh;
+  font-size: 1.3rem;
+  font-weight: 600;
+  width: 100%;
+  justify-content: center;
+}
+@media (max-width: 1000px) {
+  div.ResultPage div.weather-content div.Panel.side div.bottom div div.text {
+    font-size: 1.8rem;
+  }
+}
+div.ResultPage div.weather-content div.Panel.side div.bottom div.rain div.container div.inner {
+  background-image: linear-gradient(45deg, rgb(0, 106, 255) 0%, rgb(77, 175, 255) 80%);
+}
+div.ResultPage div.weather-content div.Panel.side div.bottom div.rain div.text {
+  color: rgb(93, 136, 255);
+}
+div.ResultPage div.weather-content div.Panel.side div.bottom div.snow div.container div.inner {
+  background-image: linear-gradient(45deg, rgb(100, 100, 100) 0%, rgb(200, 200, 200) 80%);
+}
+div.ResultPage div.weather-content div.Panel.side div.bottom div.snow div.text {
+  color: rgb(200, 200, 200);
+}
+div.ResultPage div.weather-content div.Panel.temp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 1000px) {
+  div.ResultPage div.weather-content div.Panel.temp {
+    flex-direction: column;
+    min-height: 65vh;
+    margin-bottom: 2vh;
+  }
+}
+div.ResultPage div.weather-content div.Panel.temp div.left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 5vw;
+  font-weight: 600;
+}
+@media (max-width: 1000px) {
+  div.ResultPage div.weather-content div.Panel.temp div.left {
+    min-height: 25vh;
+    margin-right: 0;
+  }
+}
+div.ResultPage div.weather-content div.Panel.temp div.left .hot {
+  color: rgb(255, 159, 90);
+}
+div.ResultPage div.weather-content div.Panel.temp div.left .cool {
+  color: rgb(130, 255, 188);
+}
+div.ResultPage div.weather-content div.Panel.temp div.left .cold {
+  color: rgb(97, 174, 255);
+}
+div.ResultPage div.weather-content div.Panel.temp div.left div.current {
+  display: flex;
+  width: 20vw;
+  justify-content: center;
+  font-size: 3rem;
+  padding-bottom: 4vh;
+  border-bottom: 0.5vh solid white;
+}
+@media (max-width: 1000px) {
+  div.ResultPage div.weather-content div.Panel.temp div.left div.current {
+    padding: 2vh 0;
+    width: 70vw;
+    border-bottom: 0.2vh solid white;
+  }
+}
+div.ResultPage div.weather-content div.Panel.temp div.left div.range {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+  padding-top: 5vh;
+}
+@media (max-width: 1000px) {
+  div.ResultPage div.weather-content div.Panel.temp div.left div.range {
+    padding-top: 3vh;
+    font-size: 2rem;
+  }
+}
+div.ResultPage div.weather-content div.Panel.temp div.right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@media (max-width: 1000px) {
+  div.ResultPage div.weather-content div.Panel.temp div.right {
+    padding: 4vh 0 2vh 0;
+    min-height: 40vh;
+  }
+}
+div.ResultPage div.weather-content div.Panel.temp div.right div.item {
+  font-size: 1.4rem;
+  font-weight: 600;
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  width: 23vw;
+}
+@media (max-width: 1000px) {
+  div.ResultPage div.weather-content div.Panel.temp div.right div.item {
+    width: 65vw;
+    font-size: 1.8rem;
+  }
+}
+div.ResultPage div.weather-content div.Panel.temp div.right div.item.bad {
+  color: rgb(255, 90, 90);
+}
+div.ResultPage div.weather-content div.Panel.temp div.right div.item.normal {
+  color: rgb(255, 186, 59);
+}
+div.ResultPage div.weather-content div.Panel.temp div.right div.item.good {
+  color: rgb(138, 255, 28);
+}
+div.ResultPage div.weather-content div.Panel.temp div.right div.item svg {
+  margin-right: 1rem;
+}
+div.ResultPage div.weather-content div.Panel.temp div.right div.item div.number {
+  font-size: 1.6rem;
+  text-align: end;
+}
+@media (max-width: 1000px) {
+  div.ResultPage div.weather-content div.Panel.temp div.right div.item div.number {
+    font-size: 2rem;
+  }
+}
+div.ResultPage div.secondary {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 3vw 4vh 3vw;
+  margin: 0;
+  height: 90vh;
+}
+div.ResultPage div.secondary.error h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-left: 1.8rem;
+  color: pink;
+}
+div.ResultPage div.secondary.error svg {
+  font-size: 2.5rem;
+  color: rgb(255, 104, 129);
+}
+div.ResultPage div.secondary.fetching h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-left: 1.5rem;
+  background-image: linear-gradient(0deg, rgb(142, 14, 253) 0%, rgb(177, 89, 255) 90%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
+div.ResultPage div.secondary.fetching div.spinner-border {
+  color: rgb(197, 132, 255);
+}
+
+div.HomePage {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  height: 100%;
+  background-image: url("./images/pexels-pixabay-355872.jpg");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: overlay;
+}
+@media (max-width: 1000px) {
+  div.HomePage {
+    overflow-y: auto;
+  }
+}
+div.HomePage div.cover {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(to bottom, rgb(36, 36, 36), rgba(36, 36, 36, 0));
+}
+div.HomePage div.top {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 35vh;
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+@media (max-width: 1000px) {
+  div.HomePage div.top {
+    height: 20vh;
+  }
+}
+div.HomePage div.top h2 {
+  font-weight: 600;
+}
+@media (max-width: 1000px) {
+  div.HomePage div.top h2 {
+    text-align: center;
+    width: 70%;
+    font-size: 2rem;
+  }
+}
+div.HomePage div.top p {
+  margin-top: 6vh;
+  font-size: 1.5rem;
+}
+@media (max-width: 1000px) {
+  div.HomePage div.top p {
+    margin-top: 3vh;
+    width: 80%;
+  }
+}
+div.HomePage div.bottom {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 55vh;
+}
+@media (max-width: 1000px) {
+  div.HomePage div.bottom {
+    height: 70vh;
+  }
+}
+div.HomePage div.bottom div.show {
+  display: flex;
+  justify-content: center;
+}
+@media (max-width: 1000px) {
+  div.HomePage div.bottom div.show {
+    flex-direction: column;
+  }
+}
+div.HomePage div.bottom div.show div.ShowCard {
+  width: 20vw;
+  margin: 0 3vw;
+  display: flex;
+  justify-content: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+@media (max-width: 1000px) {
+  div.HomePage div.bottom div.show div.ShowCard {
+    display: flex;
+    flex-direction: row;
+    height: 20vh;
+    margin: 1vh 2vw;
+    width: 96%;
+  }
+}
+div.HomePage div.bottom div.show div.ShowCard div.Panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50vh;
+  border: 1px solid rgb(60, 60, 60);
+  border-radius: 0.6rem;
+  box-shadow: 2px 3px rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+div.HomePage div.bottom div.show div.ShowCard div.Panel:hover {
+  background-color: rgba(20, 20, 20, 0.5);
+}
+@media (max-width: 1000px) {
+  div.HomePage div.bottom div.show div.ShowCard div.Panel {
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+}
+div.HomePage div.bottom div.show div.ShowCard div.Panel div.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 1vh 1vw;
+  font-weight: 600;
+  cursor: pointer;
+}
+@media (max-width: 1000px) {
+  div.HomePage div.bottom div.show div.ShowCard div.Panel div.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+}
+div.HomePage div.bottom div.show div.ShowCard div.Panel div.content div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 1000px) {
+  div.HomePage div.bottom div.show div.ShowCard div.Panel div.content div {
+    width: 100%;
+  }
+}
+div.HomePage div.bottom div.show div.ShowCard div.Panel div.content div div.name {
+  font-size: 1.6rem;
+}
+@media (max-width: 1000px) {
+  div.HomePage div.bottom div.show div.ShowCard div.Panel div.content div div.name {
+    font-size: 1.8rem;
+    margin-bottom: 1.5vh;
+    white-space: nowrap;
+  }
+}
+div.HomePage div.bottom div.show div.ShowCard div.Panel div.content div div.name.custom {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: rgb(255, 255, 39);
+}
+div.HomePage div.bottom div.show div.ShowCard div.Panel div.content div div.weather {
+  padding: 4vh 0;
+}
+@media (max-width: 1000px) {
+  div.HomePage div.bottom div.show div.ShowCard div.Panel div.content div div.weather {
+    margin: 0;
+    padding: 0;
+  }
+}
+div.HomePage div.bottom div.show div.ShowCard div.Panel div.content div div.weather div.icon svg {
+  font-size: 4.5rem;
+}
+@media (max-width: 1000px) {
+  div.HomePage div.bottom div.show div.ShowCard div.Panel div.content div div.weather div.icon svg {
+    font-size: 6.5rem;
+  }
+}
+div.HomePage div.bottom div.show div.ShowCard div.Panel div.content div div.weather div.icon.storm {
+  color: rgb(252, 0, 88);
+}
+div.HomePage div.bottom div.show div.ShowCard div.Panel div.content div div.weather div.icon.drizzle {
+  color: rgb(15, 131, 255);
+}
+div.HomePage div.bottom div.show div.ShowCard div.Panel div.content div div.weather div.icon.rain {
+  color: rgb(15, 79, 255);
+}
+div.HomePage div.bottom div.show div.ShowCard div.Panel div.content div div.weather div.icon.snow {
+  color: rgb(180, 255, 240);
+}
+div.HomePage div.bottom div.show div.ShowCard div.Panel div.content div div.weather div.icon.atmosphere {
+  color: gray;
+}
+div.HomePage div.bottom div.show div.ShowCard div.Panel div.content div div.weather div.icon.clear {
+  color: rgb(255, 177, 33);
+}
+div.HomePage div.bottom div.show div.ShowCard div.Panel div.content div div.weather div.icon.clouds {
+  color: rgb(200, 200, 200);
+}
+div.HomePage div.bottom div.show div.ShowCard div.Panel div.content div.temp {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 1000px) {
+  div.HomePage div.bottom div.show div.ShowCard div.Panel div.content div.temp {
+    width: 80%;
+    padding: 1.5vw;
+  }
+}
+div.HomePage div.bottom div.show div.ShowCard div.Panel div.content div.temp div.main {
+  font-size: 1.6rem;
+}
+@media (max-width: 1000px) {
+  div.HomePage div.bottom div.show div.ShowCard div.Panel div.content div.temp div.main {
+    font-size: 1.8rem;
+  }
+}
+div.HomePage div.bottom div.show div.ShowCard div.Panel div.content div.temp div.main.hot {
+  color: rgb(255, 159, 90);
+}
+div.HomePage div.bottom div.show div.ShowCard div.Panel div.content div.temp div.main.cool {
+  color: rgb(130, 255, 188);
+}
+div.HomePage div.bottom div.show div.ShowCard div.Panel div.content div.temp div.main.cold {
+  color: rgb(97, 174, 255);
+}
+div.HomePage div.bottom div.show div.ShowCard div.Panel div.content div.temp div.range {
+  margin-top: 2vh;
+  border-top: 1px solid white;
+  padding-top: 1vh;
+  font-size: 1.2rem;
+}
+@media (max-width: 1000px) {
+  div.HomePage div.bottom div.show div.ShowCard div.Panel div.content div.temp div.range {
+    margin-top: 1.5vh;
+    padding-top: 2vh;
+    font-size: 1.5rem;
+  }
+}
+div.HomePage div.bottom div.show div.ShowCard div.Panel div.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+div.HomePage div.bottom div.show div.ShowCard div.Panel div.error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 70%;
+}/*# sourceMappingURL=App.css.map */

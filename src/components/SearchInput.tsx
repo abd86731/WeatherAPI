@@ -6,28 +6,8 @@ import { useDispatch } from "react-redux";
 import SearchList from "./SearchList";
 import { useFetchLocationQuery } from "../store";
 import { setLocation } from "../store";
+import locationDataProcess from "../tools/locationDataProcess";
 import type { LocationSummary } from "../types/LocationSummary";
-
-interface DataProcessProp {
-  geometry: {
-    coordinates: number[];
-  };
-  properties: {
-    addresstype: string;
-    display_name: string;
-    place_id: number;
-  };
-}
-
-const dataProcess = (item: DataProcessProp) => {
-  return {
-    id: item.properties.place_id,
-    name: item.properties.display_name,
-    longitude: item.geometry.coordinates[0],
-    latitude: item.geometry.coordinates[1],
-    type: item.properties.addresstype,
-  };
-};
 
 export default function SearchInput() {
   const navigate = useNavigate();
@@ -40,10 +20,9 @@ export default function SearchInput() {
   let locationsData: null | LocationSummary[] = null;
   let isError: boolean = false;
   if (data) {
-    locationsData = data.features.map((item) => dataProcess(item));
+    locationsData = data.features.map((item) => locationDataProcess(item));
   }
   if (error) {
-    console.log(error);
     isError = true;
     locationsData = [];
   }

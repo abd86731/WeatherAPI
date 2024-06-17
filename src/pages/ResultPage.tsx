@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useFetchWeatherQuery } from "../store";
 import { IoWarning } from "react-icons/io5";
-import dataProcess from "../tools/dataProcess";
+import weatherDataProcess from "../tools/weatherDataProcess";
 import getBackground from "../tools/getBackground";
 import Spinner from "../components/reusable/Spinner";
 import WeatherPanel from "../components/WeatherPanel";
@@ -40,7 +40,7 @@ export default function ResultPage() {
 
   const renderedContent = () => {
     if (currentData) {
-      const weatherData: WeatherSummary = dataProcess(currentData);
+      const weatherData = weatherDataProcess(currentData);
 
       return (
         <div className="weather-content">
@@ -79,7 +79,6 @@ export default function ResultPage() {
     }
   };
 
-  // ResultPage's background
   const background = getBackground();
 
   useEffect(() => {

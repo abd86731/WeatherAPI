@@ -17,7 +17,7 @@ export default function SearchList({
   isError,
   isFetching,
 }: SearchListProp) {
-  const content =
+  const renderedContent =
     locations.length === 0 ? (
       isError ? (
         <div className="searchText error">Error in searching!</div>
@@ -34,5 +34,5 @@ export default function SearchList({
       })
     );
 
-  return <div className="SearchList">{content}</div>;
+  return <div className="SearchList">{renderedContent}</div>;
 }

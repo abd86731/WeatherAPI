@@ -2,13 +2,12 @@ import { useNavigate } from "react-router-dom";
 import { IoMdLocate } from "react-icons/io";
 import { IoWarning } from "react-icons/io5";
 import { useFetchWeatherQuery } from "../store";
-import dataProcess from "../tools/dataProcess";
+import weatherDataProcess from "../tools/weatherDataProcess";
 import { getWeatherIcons } from "../tools/getIcons";
 import { getTempColor } from "../tools/getColors";
 import Panel from "./reusable/Panel";
 import Spinner from "./reusable/Spinner";
 import type { CityData } from "../tools/getMainCity";
-import type { WeatherSummary } from "../types/WeatherSummary";
 
 interface ShowCardProp {
   city: CityData;
@@ -16,6 +15,8 @@ interface ShowCardProp {
 
 export default function ShowCard({ city }: ShowCardProp) {
   const navigate = useNavigate();
+
+  // fetching weather data
   const { currentData, error, isLoading } = useFetchWeatherQuery({
     lon: city.location.longitude,
     lat: city.location.latitude,
@@ -23,7 +24,7 @@ export default function ShowCard({ city }: ShowCardProp) {
 
   const renderedContent = () => {
     if (currentData) {
-      const weatherData: WeatherSummary = dataProcess(currentData);
+      const weatherData = weatherDataProcess(currentData);
       const iconPack = getWeatherIcons(weatherData.weather.id);
       const isCustom = city.location.type === "custom";
       const tempColor = getTempColor(weatherData.main.temp);

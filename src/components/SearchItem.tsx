@@ -7,6 +7,7 @@ interface SearchItemProp {
 }
 
 export default function SearchItem({ location, onLocate }: SearchItemProp) {
+  // location name to display
   const displayName = (name: string) => {
     const parts = name.split(", ");
     let str: string = "";

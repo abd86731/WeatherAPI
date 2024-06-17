@@ -1,6 +1,9 @@
 import type { WeatherResponse } from "../types/WeatherResponse";
+import type { WeatherSummary } from "../types/WeatherSummary";
 
-export default function dataProcess(res: WeatherResponse) {
+export default function weatherDataProcess(
+  res: WeatherResponse
+): WeatherSummary {
   return {
     station: {
       name: res.name,
